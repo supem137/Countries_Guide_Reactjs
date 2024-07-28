@@ -1,10 +1,10 @@
 import FilterData from '../filter/FilterData';
 import SearchCountry from '../search/SearchCountry';
-import '../header/Header.css';
+import './Header.css';
 
 function Header() {
   return (
-    <div className="container">
+    <header className="header-container">
       <span onClick={() => window.location.reload(true)} className="logo">
         Countries Guide
       </span>
@@ -12,7 +12,7 @@ function Header() {
         <SearchCountry />
         <FilterData />
       </div>
-    </div>
+    </header>
   );
 }
 

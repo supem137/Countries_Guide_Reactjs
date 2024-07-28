@@ -3,24 +3,24 @@ import styles from '../card/card.module.css';
 
 function Card({ data }) {
   return (
-    <div className={styles.main_container}>
+    <div className={styles.mainContainer}>
       {data.length !== 0 &&
         data.map((element, index) => (
-          <div key={index} className={styles.container}>
+          <div key={index} className={styles.cardContainer}>
             <Link key={index} to={`${element.cca3}`}>
-              <img className={styles.flag} src={element.flags.png} />
+              <div
+                className={styles.flag}
+                style={{ backgroundImage: `url(${element.flags.png})` }}
+              />
               <div className={styles.details}>
                 <p className={styles.name}>{element.name.common}</p>
                 <p className={styles.capital}>Capital: {element.capital}</p>
                 <p className={styles.region}>Region: {element.region}</p>
                 <p className={styles.population}>
-                  Population: {element.population}
+                  Population: {element.population.toLocaleString()}
                 </p>
               </div>
             </Link>
-            {/* {console.log(index)}
-            {console.log(element.name)}
-            {console.log(Object.values(element.name.nativeName)[0].official)} */}
           </div>
         ))}
     </div>
